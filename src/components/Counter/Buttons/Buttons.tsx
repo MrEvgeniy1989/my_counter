@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Buttons.module.css';
-import {Button} from './Button/Button';
+import {Button} from '../../Button/Button';
 
 type ButtonsPropsType = {
     value: number
@@ -8,7 +8,6 @@ type ButtonsPropsType = {
     maxValue: number
     inc: () => void
     reset: () => void
-    set: () => void
 }
 
 export const Buttons = (props: ButtonsPropsType) => {
@@ -26,11 +25,6 @@ export const Buttons = (props: ButtonsPropsType) => {
                 className={styles.buttonReset}
                 callBack={props.reset}
                 disabled={props.value === props.minValue}
-            />
-            <Button
-                title={'Set'}
-                className={styles.buttonSet}
-                callBack={props.set}
             />
         </div>
     )

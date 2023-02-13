@@ -5,4 +5,9 @@
     top: 0;
     left: 0;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 60px;
 }
