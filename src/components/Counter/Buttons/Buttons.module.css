@@ -1,0 +1,57 @@
+.buttons {
+    width: 90%;
+    height: 30%;
+    border: #60d7f5 3px solid;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2%;
+    flex: 2;
+}
+
+.buttonInc {
+    width: 40%;
+    height: 50%;
+    background-color: #60d7f5;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 30px;
+    color: #272b34;
+    margin-left: 5px;
+}
+
+.buttonInc:disabled {
+    opacity: 50%;
+}
+
+.buttonReset {
+    width: 40%;
+    height: 50%;
+    background-color: #60d7f5;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 30px;
+    color: #272b34;
+
+}
+
+.buttonReset:disabled {
+    opacity: 50%;
+}
+
+.buttonSet {
+    width: 40%;
+    height: 50%;
+    background-color: #60d7f5;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 30px;
+    color: #272b34;
+    margin-right: 5px;
+}

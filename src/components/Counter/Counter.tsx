@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styles from './Counter.module.css'
+import {Tablo} from './Tablo/Tablo';
+import {Buttons} from './Buttons/Buttons';
 
 type CounterPropsType = {}
 
@@ -15,29 +17,28 @@ export const Counter = (props: CounterPropsType) => {
 
     }
     const reset = () => {
-      setValue(minValue)
+        setValue(minValue)
+    }
+
+    const set = () => {
+
     }
 
     return (
         <div className={styles.counter}>
-            <div className={(value >= minValue && value < maxValue) ? styles.tablo : styles.redTablo}>
-                {value}
-            </div>
-            <div className={styles.buttons}>
-                <button
-                    className={styles.buttonInc}
-                    onClick={inc}
-                    disabled={value >= maxValue}
-                >Inc
-                </button>
-
-                <button
-                    className={styles.buttonReset}
-                    onClick={reset}
-                    disabled={value === minValue}
-                >Reset
-                </button>
-            </div>
+            <Tablo
+                value={value}
+                minValue={minValue}
+                maxValue={maxValue}
+            />
+            <Buttons
+                value={value}
+                minValue={minValue}
+                maxValue={maxValue}
+                inc={inc}
+                reset={reset}
+                set={set}
+            />
         </div>
     )
 }
