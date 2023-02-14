@@ -9,3 +9,133 @@
     display: flex;
     flex-direction: column;
 }
+
+.scoreboardSettings {
+    width: 90%;
+    height: 50%;
+    border: #60d7f5 3px solid;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    color: #60d7f5;
+    justify-content: space-around;
+}
+
+.startValue {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.startValue label {
+    font-size: 22px;
+}
+
+.startValue input {
+    font-size: 25px;
+    text-align: center;
+    max-width: 150px;
+    font-weight: 700;
+}
+
+.startValueError {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.startValueError label {
+    font-size: 22px;
+}
+
+.startValueError input{
+    font-size: 25px;
+    text-align: center;
+    max-width: 150px;
+    font-weight: 700;
+    background: #fd6565;
+}
+
+.startValue input::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+.startValueError input::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+.maxValue {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.maxValue label {
+    font-size: 22px;
+}
+
+.maxValue input {
+    font-size: 25px;
+    text-align: center;
+    max-width: 150px;
+    font-weight: 700;
+}
+
+.maxValueError {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.maxValueError label {
+    font-size: 22px;
+}
+
+.maxValueError input {
+    font-size: 25px;
+    text-align: center;
+    max-width: 150px;
+    font-weight: 700;
+    background: #fd6565;
+}
+
+.maxValue input::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+.maxValueError input::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+.buttonsForSettings {
+    width: 90%;
+    height: 30%;
+    border: #60d7f5 3px solid;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2%;
+    flex: 2;
+}
+
+.buttonSet {
+    width: 40%;
+    height: 50%;
+    background-color: #60d7f5;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 30px;
+    color: #272b34;
+    margin-left: 5px;
+}
+
+.buttonSet:disabled {
+    opacity: 50%;
+}

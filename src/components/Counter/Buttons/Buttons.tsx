@@ -8,6 +8,7 @@ type ButtonsPropsType = {
     maxValue: number
     inc: () => void
     reset: () => void
+    error: null | string
 }
 
 export const Buttons = (props: ButtonsPropsType) => {
@@ -18,13 +19,13 @@ export const Buttons = (props: ButtonsPropsType) => {
                 title={'Inc'}
                 className={styles.buttonInc}
                 callBack={props.inc}
-                disabled={props.value >= props.maxValue}
+                disabled={!!props.error || props.value >= props.maxValue}
             />
             <Button
                 title={'Reset'}
                 className={styles.buttonReset}
                 callBack={props.reset}
-                disabled={props.value === props.minValue}
+                disabled={!!props.error || props.value === props.minValue}
             />
         </div>
     )

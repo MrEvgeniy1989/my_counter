@@ -9,6 +9,7 @@ type CounterPropsType = {
     maxValue: number
     inc: () => void
     reset: () => void
+    error: null | string
 }
 
 export const Counter = (props: CounterPropsType) => {
@@ -20,6 +21,7 @@ export const Counter = (props: CounterPropsType) => {
                 value={props.value}
                 minValue={props.minValue}
                 maxValue={props.maxValue}
+                error={props.error}
             />
             <Buttons
                 value={props.value}
@@ -27,6 +29,7 @@ export const Counter = (props: CounterPropsType) => {
                 maxValue={props.maxValue}
                 inc={props.inc}
                 reset={props.reset}
+                error={props.error}
             />
         </div>
     )
