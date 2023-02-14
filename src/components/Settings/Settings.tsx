@@ -1,7 +1,5 @@
 import React, {ChangeEvent, useState} from 'react';
 import styles from './Settings.module.css'
-import {ScoreboardSettings} from './ScoreboardSettings/ScoreboardSettings';
-import {ButtonsForSettings} from './ButtonsForSettings/ButtonsForSettings';
 import {Button} from '../Button/Button';
 
 type SettingsPropsType = {
