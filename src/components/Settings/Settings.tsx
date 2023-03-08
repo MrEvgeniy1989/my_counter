@@ -18,11 +18,21 @@ export const Settings = (props: SettingsPropsType) => {
 
     const minValueChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.setError('Press Set')
-        setMinValue(+e.currentTarget.value)
+        if (+e.currentTarget.value >= -1 && +e.currentTarget.value <= maxValue) {
+            setMinValue(+e.currentTarget.value)
+        }
+        if (+e.currentTarget.value === maxValue || +e.currentTarget.value < 0) {
+            props.setError('Incorrect value!')
+        }
     }
     const maxValueChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.setError('Press Set')
-        setMaxValue(+e.currentTarget.value)
+        if (+e.currentTarget.value >= 0 && +e.currentTarget.value >= minValue) {
+            setMaxValue(+e.currentTarget.value)
+        }
+        if (+e.currentTarget.value === minValue || +e.currentTarget.value < 1) {
+            props.setError('Incorrect value!')
+        }
     }
 
     const setButtonHandler = () => {
@@ -33,7 +43,7 @@ export const Settings = (props: SettingsPropsType) => {
         <div className={styles.settings}>
             <div className={styles.scoreboardSettings}>
                 <div className={props.error === 'Incorrect value!' ? styles.startValueError : styles.startValue}>
-                    <label htmlFor="s">Start value:</label>
+                    <label htmlFor="s">Min value:</label>
                     <input type="number" id="s" value={minValue} onChange={minValueChangeHandler}/>
                 </div>
                 <div className={props.error === 'Incorrect value!' ? styles.maxValueError : styles.maxValue}>
