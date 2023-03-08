@@ -3,58 +3,42 @@ import styles from './Settings.module.css'
 import {Button} from '../Button/Button';
 
 type SettingsPropsType = {
-    value: number
-    minValue: number
-    maxValue: number
-    changeMinValue: (newMinValue: number) => void;
-    changeMaxValue: (newMaxValue: number) => void;
     error: null | string
     setError: (error: null | string) => void
+    minValue: number
+    maxValue: number
+    minValueChange: (newMinValue: number) => void
+    maxValueChange: (newMaxValue: number) => void
+    setButton: (newMinValue: number, newMaxValue: number) => void
 }
 
 export const Settings = (props: SettingsPropsType) => {
-    const [minValue, setMinValue] = useState<number>(props.minValue);
-    const [maxValue, setMaxValue] = useState<number>(props.maxValue);
+    const [minValue, setMinValue] = useState<number>(props.minValue)
+    const [maxValue, setMaxValue] = useState<number>(props.maxValue)
 
-    const minValueInputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        if (+e.currentTarget.value < 0 || +e.currentTarget.value >= maxValue) {
-            props.setError('Incorrect value!')
-            return
-        } else {
-            props.setError(null)
-            setMinValue(+e.currentTarget.value);
-        }
-    };
-    const maxValueInputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        if (+e.currentTarget.value < 1 || +e.currentTarget.value <= minValue) {
-            props.setError('Incorrect value!')
-            return
-        } else {
-            props.setError(null)
-            setMaxValue(+e.currentTarget.value);
-        }
-    };
+    const minValueChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        props.setError('Press Set')
+        setMinValue(+e.currentTarget.value)
+    }
+    const maxValueChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        props.setError('Press Set')
+        setMaxValue(+e.currentTarget.value)
+    }
 
     const setButtonHandler = () => {
-        if (minValue < 0 || minValue >= maxValue) {
-            props.setError('Incorrect value!')
-        } else {
-            props.setError(null)
-            props.changeMinValue(minValue);
-            props.changeMaxValue(maxValue);
-        }
-    };
+        props.setButton(minValue, maxValue)
+    }
 
     return (
         <div className={styles.settings}>
             <div className={styles.scoreboardSettings}>
-                <div className={props.error ? styles.startValueError : styles.startValue}>
+                <div className={props.error === 'Incorrect value!' ? styles.startValueError : styles.startValue}>
                     <label htmlFor="s">Start value:</label>
-                    <input type="number" id="s" value={minValue} onChange={minValueInputChangeHandler}/>
+                    <input type="number" id="s" value={minValue} onChange={minValueChangeHandler}/>
                 </div>
-                <div className={props.error ? styles.maxValueError : styles.maxValue}>
+                <div className={props.error === 'Incorrect value!' ? styles.maxValueError : styles.maxValue}>
                     <label htmlFor="m">Max value:</label>
-                    <input type="number" id="m" value={maxValue} onChange={maxValueInputChangeHandler}/>
+                    <input type="number" id="m" value={maxValue} onChange={maxValueChangeHandler}/>
                 </div>
             </div>
 

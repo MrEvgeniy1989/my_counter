@@ -10,7 +10,7 @@ type TabloPropsType = {
 
 export const Tablo = (props: TabloPropsType) => {
     return (
-        <div className={props.error ? styles.error : (props.value >= props.minValue && props.value < props.maxValue) ? styles.tablo : styles.redTablo}>
+        <div className={props.error === 'Incorrect value!' ? styles.error : props.error === 'Press Set' ? styles.message :(props.value >= props.minValue && props.value < props.maxValue) ? styles.tablo : styles.redTablo}>
             {props.error ? props.error : props.value}
         </div>
     )

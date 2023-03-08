@@ -45,3 +45,19 @@
     color: red;
     justify-content: center;
 }
+
+.message {
+    width: 90%;
+    height: 50%;
+    border: #60d7f5 3px solid;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex: 3;
+    font-weight: 700;
+    font-size: 40px;
+    color: #60d7f5;
+    justify-content: center;
+}
